@@ -37,13 +37,13 @@ button { cursor: pointer; }
 .hero { color: #fff; background: radial-gradient(circle at 82% 0%, rgba(213,165,80,.34), transparent 28%), linear-gradient(145deg, #102c25, #1c4439 62%, #2a5448); }
 .nav { min-height: 82px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,.14); }
 .brand { color: inherit; text-decoration: none; font-family: "Newsreader", serif; font-size: 1.35rem; font-weight: 600; }
-.hero-content { padding: 84px 0 76px; }
+.hero-content { padding: 36px 0 34px; }
 .eyebrow { margin: 0 0 18px; color: #e4c486; font-size: .78rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
 .eyebrow.dark { color: #7d6541; }
 h1, h2, h3 { font-family: "Newsreader", serif; font-weight: 600; line-height: 1.02; }
-h1 { max-width: 760px; margin: 0; font-size: clamp(3.2rem, 8vw, 6.7rem); letter-spacing: -.045em; }
+h1 { max-width: 760px; margin: 0; font-size: clamp(2.25rem, 5vw, 3.7rem); letter-spacing: -.035em; }
 .hero-copy { max-width: 700px; margin: 30px 0 0; color: rgba(255,255,255,.78); font-size: clamp(1rem, 2vw, 1.25rem); line-height: 1.65; }
-.hero-meta { display: flex; flex-wrap: wrap; gap: 14px 26px; margin-top: 42px; color: rgba(255,255,255,.74); font-size: .92rem; }
+.hero-meta { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-top: 0; padding: 16px 0 20px; color: rgba(255,255,255,.74); font-size: .92rem; }
 .hero-meta span { display: inline-flex; align-items: center; gap: 6px; }
 .hero-meta span::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
 
@@ -53,7 +53,7 @@ h1 { max-width: 760px; margin: 0; font-size: clamp(3.2rem, 8vw, 6.7rem); letter-
 .button-primary { width: 100%; color: #fff; background: var(--green); padding: 15px 20px; }
 .button-primary:hover { background: var(--green-2); }
 
-.catalog { padding: 78px 0 110px; }
+.catalog { padding: 44px 0 90px; }
 .catalog-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; }
 .catalog-heading h2 { margin: 0; font-size: clamp(2.25rem, 5vw, 4rem); letter-spacing: -.03em; }
 #result-count { margin: 0 0 8px; color: var(--muted); white-space: nowrap; }
@@ -88,7 +88,7 @@ select { padding: 0 42px 0 16px; }
 .empty h3 { margin: 0 0 8px; color: var(--ink); font-size: 2rem; }
 
 footer { color: rgba(255,255,255,.72); background: #102c25; }
-.footer-grid { min-height: 230px; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 50px; }
+.footer-grid { min-height: 160px; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 50px; }
 .footer-grid p { max-width: 520px; line-height: 1.6; }
 .footer-grid .brand { color: white; margin-bottom: 8px; }
 
@@ -128,8 +128,7 @@ dialog::backdrop { background: rgba(7,18,14,.72); backdrop-filter: blur(5px); }
 @media (max-width: 620px) {
   .shell { width: min(100% - 24px, 1180px); }
   .nav { min-height: 68px; }
-  .hero-content { padding: 64px 0 58px; }
-  h1 { font-size: 3.35rem; }
+  h1 { font-size: 2.35rem; }
   .controls { grid-template-columns: 1fr; }
   .catalog { padding-top: 56px; }
   .catalog-heading { align-items: start; flex-direction: column; }
@@ -287,18 +286,12 @@ if (location.hash) openItem(location.hash.slice(1), false);
   <body>
     <header class="hero">
       <nav class="nav shell" aria-label="Main navigation">
-        <a class="brand" href="#top">SF Moving Sale</a>
+        <a class="brand" href="#top">Items for Sale</a>
         <button class="share-page button button-light" type="button">Share this page</button>
       </nav>
-      <div class="hero-content shell" id="top">
-        <p class="eyebrow">Local pickup · San Francisco</p>
-        <h1>Good things looking for a new home.</h1>
-        <p class="hero-copy">Furniture, home goods, appliances and electronics in good used condition. Pickup near the Financial District.</p>
-        <div class="hero-meta">
-          <span><strong id="item-count">29</strong> items available</span>
-          <span>Fair, researched prices</span>
-          <span>Exact pickup details shared privately</span>
-        </div>
+      <div class="hero-meta shell" id="top">
+        <span><strong id="item-count">29</strong> items</span>
+        <span>Pickup in San Francisco</span>
       </div>
     </header>
 
@@ -306,8 +299,7 @@ if (location.hash) openItem(location.hash.slice(1), false);
       <section class="catalog shell" aria-labelledby="catalog-title">
         <div class="catalog-heading">
           <div>
-            <p class="eyebrow dark">Browse the sale</p>
-            <h2 id="catalog-title">Find your next favorite thing</h2>
+            <h2 id="catalog-title">Listings</h2>
           </div>
           <p id="result-count" aria-live="polite"></p>
         </div>
@@ -341,10 +333,10 @@ if (location.hash) openItem(location.hash.slice(1), false);
     <footer>
       <div class="shell footer-grid">
         <div>
-          <p class="brand">SF Moving Sale</p>
-          <p>Local pickup near the Financial District in San Francisco.</p>
+          <p class="brand">Items for Sale</p>
+          <p>Pickup near the Financial District, San Francisco.</p>
         </div>
-        <p>Availability may change. To inquire, reply to the person who shared this page and mention the item name.</p>
+        <p>To ask about an item, message the person who shared this page.</p>
       </div>
     </footer>
 
